@@ -13,7 +13,7 @@ include "root" {
 # Include the envcommon configuration for the component. The envcommon configuration contains settings that are common
 # for the component across all environments.
 include "envcommon" {
-  path = "${dirname(find_in_parent_folders())}/_envcommon/webserver-cluster.hcl"
+  path = "${dirname(find_in_parent_folders())}/_envcommon/mysql.hcl"
   # We want to reference the variables from the included config in this configuration, so we expose it.
   expose = true
 }
@@ -25,5 +25,5 @@ terraform {
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
-# We don't need to override any of the common parameters for this environment, so we don't specify any inputs.
+# We don't need to override any of the common parameters for this environment, so we don't specify any other parameters.
 # ---------------------------------------------------------------------------------------------------------------------
